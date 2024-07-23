@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: "Shiroko's Login",
 };
 
-export default function ResourcesLayout({
+export default function LoginLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
