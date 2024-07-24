@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Shiroko's Login",
+	title: "Shiroko's Login",
 };
 
 export default function LoginLayout({
-    children,
+	children,
 }: Readonly<{
-    children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-    return <>{children}</>;
+	return <>{children}</>;
 }

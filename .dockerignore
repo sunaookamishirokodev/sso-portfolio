@@ -1,0 +1,16 @@
+node_modules
+.gitignore
+.prettierignore
+Dockerfile*
+.husky
+.commitlintrc.json
+.eslintrc.json
+CODE_OF_CONDUCT
+SECURITY
+*.md
+.lintstagedrc
+.prettierrc.json
+.huskyrc
+.editorconfig
+LICENSE
+.git

@@ -3,14 +3,14 @@ import { JetBrains_Mono } from "next/font/google";
 const mainFont = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function RootTemplate({
-    children,
+	children,
 }: Readonly<{
-    children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-    return (
-        // <body className={`${mainFont.className} flex bg-gradient-to-tr min-h-screen from-stone-200 to-cyan-50`} suppressHydrationWarning>
-        <body className={`${mainFont.className} flex bg-shiroko-bg bg-cover min-h-screen`} suppressHydrationWarning>
-            {children}
-        </body>
-    );
+	return (
+		// <body className={`${mainFont.className} flex bg-gradient-to-tr min-h-screen from-stone-200 to-cyan-50`} suppressHydrationWarning>
+		<body className={`${mainFont.className} flex min-h-screen bg-shiroko-bg bg-cover`} suppressHydrationWarning>
+			{children}
+		</body>
+	);
 }

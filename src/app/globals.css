@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 @layer components {
-    .box {
-        width: 450px;
-        background: #ffffff;
-        margin: auto;
-        padding: 44px;
-        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    }
+	.box {
+		width: 450px;
+		background: #ffffff;
+		margin: auto;
+		padding: 44px;
+		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+	}
 
-    .box-transition {
-        visibility: hidden;
-        opacity: 0;
-        animation: form-transition forwards 0.2s 2s ease-out;
-    }
+	.box-transition {
+		visibility: hidden;
+		opacity: 0;
+		animation: form-transition forwards 0.2s 2s ease-out;
+	}
 
-    @keyframes form-transition {
-        100% {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
+	@keyframes form-transition {
+		100% {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
 }
 
 @layer components {
-    .animate-horizontal-shaking {
-        animation: horizontal-shaking 0.2s linear;
-    }
+	.animate-horizontal-shaking {
+		animation: horizontal-shaking 0.2s linear;
+	}
 
-    @keyframes horizontal-shaking {
-        0% {
-            transform: translateX(0);
-        }
-        25% {
-            transform: translateX(5px);
-        }
-        50% {
-            transform: translateX(-5px);
-        }
-        75% {
-            transform: translateX(5px);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
+	@keyframes horizontal-shaking {
+		0% {
+			transform: translateX(0);
+		}
+		25% {
+			transform: translateX(5px);
+		}
+		50% {
+			transform: translateX(-5px);
+		}
+		75% {
+			transform: translateX(5px);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
 }
