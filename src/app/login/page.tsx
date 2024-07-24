@@ -137,7 +137,7 @@ export default function LoginPage() {
                     isPending={isPending}
                 />
             ) : code === 202 ? (
-                <TwoFactorAuthSelect setMethod={setMethod} error={error} isPending={isPending} />
+                <TwoFactorAuthSelect setError={setError} setMethod={setMethod} error={error} isPending={isPending} />
             ) : code === 201 ? (
                 <EnterCode
                     setOtp={setOtp}

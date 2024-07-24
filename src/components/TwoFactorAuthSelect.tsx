@@ -3,11 +3,29 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface TwoFactorAuthSelectProps {
     setMethod: Dispatch<SetStateAction<"email" | "backup_code" | "authenticator" | null>>;
+    setError: Dispatch<SetStateAction<string>>;
     error: string;
     isPending: boolean;
 }
-export default function TwoFactorAuthSelect({ setMethod, error, isPending }: TwoFactorAuthSelectProps) {
+export default function TwoFactorAuthSelect({ setMethod, setError, error, isPending }: TwoFactorAuthSelectProps) {
     const [value, setValue] = useState<"email" | "backup_code" | "authenticator" | null>(null);
+
+    useEffect(() => {
+        const onEnter = (e: KeyboardEvent) => {
+            if (e.key === "Enter") {
+                if (value === null) {
+                    return setError("Please select a method");
+                }
+                setMethod(value);
+            }
+        };
+
+        window.addEventListener("keydown", onEnter);
+
+        return () => {
+            window.removeEventListener("keydown", onEnter);
+        };
+    }, [value, setMethod]);
 
     return (
         <div className="flex flex-col gap-5 items-start">
@@ -36,11 +54,17 @@ export default function TwoFactorAuthSelect({ setMethod, error, isPending }: Two
             </span>
             <button
                 disabled={isPending}
-                type="button"
+                type="submit"
                 className={`px-5 py-2 ml-auto mt-5  transition-colors ${
                     isPending ? "bg-cyan-400/50 text-black/50" : "bg-cyan-400 hover:bg-cyan-500"
                 }`}
-                onClick={() => setMethod(value)}
+                onClick={(e) => {
+                    e.preventDefault();
+                    if (value === null) {
+                        return setError("Please select a method");
+                    }
+                    setMethod(value);
+                }}
             >
                 Continue
             </button>

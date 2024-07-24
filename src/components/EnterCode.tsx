@@ -31,7 +31,7 @@ export default forwardRef(function EnterCode(
     }, [countdown]);
 
     return (
-        <div className="flex flex-col">
+        <form className="flex flex-col">
             <span className="text-2xl font-semibold mb-5">
                 Enter {method === "backup_code" ? "backup code" : "one time password"}
             </span>
@@ -57,7 +57,7 @@ export default forwardRef(function EnterCode(
                 {method === "email" ? (
                     <button
                         onClick={async () => {
-                            setError("")
+                            setError("");
 
                             try {
                                 const res = await axios.get(
@@ -84,7 +84,6 @@ export default forwardRef(function EnterCode(
                 )}
                 <button
                     ref={ref}
-                    onClick={() => setCountdown(60)}
                     type="submit"
                     disabled={isPending}
                     className={`px-5 py-2 transition-colors ${
@@ -94,6 +93,6 @@ export default forwardRef(function EnterCode(
                     Continue
                 </button>
             </div>
-        </div>
+        </form>
     );
 });
