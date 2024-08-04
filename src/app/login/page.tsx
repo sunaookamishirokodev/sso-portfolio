@@ -71,7 +71,7 @@ export default function LoginPage() {
 					}
 
 					const res = await axios.post(
-						`${process.env.NEXT_PUBLIC_API_BASE_URL}/authentication/common/login/`,
+						`${process.env.NEXT_PUBLIC_API_BASE_URL}/authentication/common/login`,
 						{ identify, password },
 						{ withCredentials: true },
 					);

@@ -25,7 +25,7 @@ export default function TwoFactorAuthSelect({ setMethod, setError, error, isPend
 		return () => {
 			window.removeEventListener("keydown", onEnter);
 		};
-	}, [value, setMethod]);
+	}, [value, setMethod, setError]);
 
 	return (
 		<div className="flex flex-col items-start gap-5">
