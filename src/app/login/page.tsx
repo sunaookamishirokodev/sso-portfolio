@@ -1,12 +1,12 @@
 "use client";
+import EnterCode from "@/components/EnterCode";
 import LoginForm from "@/components/LoginForm";
 import TwoFactorAuthSelect from "@/components/TwoFactorAuthSelect";
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { _redirect } from "../actions";
-import EnterCode from "@/components/EnterCode";
+import { useSearchParams } from "next/navigation";
 
 export default function LoginPage() {
 	const [identify, setIdentify] = useState<string>("");
